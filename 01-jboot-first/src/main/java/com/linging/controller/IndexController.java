@@ -4,11 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.jfinal.aop.Inject;
 import com.jfinal.plugin.activerecord.Db;
 import com.jfinal.plugin.activerecord.Record;
+import com.linging.model.dto.MyConfig;
 import com.linging.service.UserService;
+import io.jboot.Jboot;
+import io.jboot.aop.annotation.ConfigValue;
 import io.jboot.web.controller.JbootController;
 import io.jboot.web.controller.annotation.RequestMapping;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,6 +24,9 @@ public class IndexController extends JbootController {
     @Inject
     private UserService userService;
 
+    @ConfigValue("undertow.host")
+    private String host;
+
     public void index(){
         renderText("hello Jboot!!!");
     }
@@ -34,6 +39,22 @@ public class IndexController extends JbootController {
 
     public void findAllUser(){
         renderJson(userService.findAll());
+    }
+
+    public void getConfig(){
+        String port = Jboot.configValue("undertow.port");
+        System.out.println(port);
+        System.out.println(host);
+        MyConfig config = Jboot.config(MyConfig.class);
+        System.out.println(config);
+
+        renderJson(port);
+    }
+
+    public void getConfigByApollo(){
+        String timeout = Jboot.configValue("timeout");
+        System.out.println(timeout);
+        renderJson(timeout);
     }
 
 }

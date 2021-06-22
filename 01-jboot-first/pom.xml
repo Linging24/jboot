@@ -2,15 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>jbootDemo</artifactId>
+        <groupId>com.linging</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.linging</groupId>
-    <artifactId>jbootDemo</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>01-jboot-first</module>
-    </modules>
+    <artifactId>01-jboot-first</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,9 +18,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.jboot</groupId>
-            <artifactId>jboot</artifactId>
-            <version>3.9.18</version>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
+            <version>1.7.0</version>
         </dependency>
     </dependencies>
+
 </project>

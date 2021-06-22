@@ -2,16 +2,15 @@ package com.linging.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.jfinal.aop.Inject;
-import com.jfinal.core.paragetter.Para;
 import com.jfinal.plugin.activerecord.Page;
 import com.linging.model.User;
 import com.linging.model.vo.ResponseVo;
 import com.linging.service.UserService;
 import io.jboot.web.controller.JbootController;
 import io.jboot.web.controller.annotation.RequestMapping;
+import io.jboot.web.json.JsonBody;
 
 import java.io.BufferedReader;
-import java.util.List;
 
 /**
  * @author Linging
@@ -52,8 +51,9 @@ public class UserController extends JbootController {
     /**
      * 新增用户
      */
-    public void add() throws Exception {
-        User user = getRequestObject(User.class);
+    public void add(@JsonBody User user) throws Exception {
+        System.out.println(user);
+        //User user = getRequestObject(User.class);
         userService.save(user);
         renderJson(ResponseVo.ok());
     }

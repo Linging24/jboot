@@ -1,6 +1,5 @@
 package com.linging.model.vo;
 
-import javax.xml.ws.Response;
 import java.io.Serializable;
 
 /**

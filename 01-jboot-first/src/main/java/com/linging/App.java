@@ -1,5 +1,6 @@
 package com.linging;
 
+
 import io.jboot.app.JbootApplication;
 
 /**
