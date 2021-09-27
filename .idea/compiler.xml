@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="01-jboot-first" />
         <module name="03-dubbo-provider" />
         <module name="02-dubbo-consumer" />
+        <module name="04-test-bigdecimal" />
+        <module name="01-jboot-first" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
